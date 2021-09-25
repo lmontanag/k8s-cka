@@ -31,3 +31,7 @@ deactivate
 ## Troubleshooting
 
 - [Running Ansible Manually](https://docs.ansible.com/ansible/2.4/guide_vagrant.html#running-ansible-manually)
+
+  ```bash
+  ansible-playbook --private-key=~/.vagrant.d/insecure_private_key --extra-vars "node_ip=192.168.50.10" -u vagrant -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory kubernetes-setup/master-playbook.yml
+  ```
