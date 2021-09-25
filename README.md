@@ -20,3 +20,10 @@ pip install ansible
 # deactivate environment
 deactivate
 ```
+
+## useful links
+
+- [Training and Certification](https://docs.linuxfoundation.org/tc-docs/)
+- [Important Instructions: CKA and CKAD](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad)
+- [Platform Selection](https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook/exam-preparation-checklist#platform-selection-1)
+  - for CKA the Platform Option Available is `Ubuntu 18.04`
