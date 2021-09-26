@@ -28,6 +28,17 @@ deactivate
 - [Platform Selection](https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook/exam-preparation-checklist#platform-selection-1)
   - for CKA the Platform Option Available is `Ubuntu 18.04`
 
+## Configuring a cgroup driver
+
+Both the container runtime and the kubelet have a property called "[cgroup driver](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)", which is important for the management of cgroups on Linux machines.
+
+Warning:
+Matching the container runtime and kubelet cgroup drivers is required or otherwise the kubelet process will fail.
+
+See [Configuring a cgroup](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/) driver for more details.
+
+here the info to setup a cgroup driver for [docker](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker)
+
 ## Troubleshooting
 
 - [Running Ansible Manually](https://docs.ansible.com/ansible/2.4/guide_vagrant.html#running-ansible-manually)
@@ -35,3 +46,13 @@ deactivate
   ```bash
   ansible-playbook --private-key=~/.vagrant.d/insecure_private_key --extra-vars "node_ip=192.168.50.10" -u vagrant -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory kubernetes-setup/master-playbook.yml
   ```
+
+- troubleshoot kubelet
+
+  ```bash
+  If you are on a systemd-powered system, you can try to troubleshoot the error with the following commands:
+  - 'systemctl status kubelet'
+  - 'journalctl -xeu kubelet'
+  ```
+
+- [Troubleshooting kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/troubleshooting-kubeadm/)

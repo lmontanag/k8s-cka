@@ -44,6 +44,24 @@
         name: vagrant
         group: docker
 
+    ## changes for Configuring a cgroup driver
+    - name: Create directory /etc/docker
+      file:
+        path: /etc/docker
+        state: directory
+        mode: "0755"
+
+    - name: Copy daemon.json to /etc/docker folder
+      ansible.builtin.copy:
+        src: daemon.json
+        dest: /etc/docker/daemon.json
+
+    - name: Restart docker
+      service:
+        name: docker
+        daemon_reload: yes
+        state: restarted
+
     # Step 2.2: Kubelet will not start if the system has swap enabled, so we are disabling swap using the below code.
 
     - name: Remove swapfile from /etc/fstab
