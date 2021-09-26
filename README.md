@@ -25,8 +25,10 @@ deactivate
 
 - [Training and Certification](https://docs.linuxfoundation.org/tc-docs/)
 - [Important Instructions: CKA and CKAD](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad)
+  - The CKA & CKAD environments are currently running Kubernetes v1.21.
 - [Platform Selection](https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook/exam-preparation-checklist#platform-selection-1)
   - for CKA the Platform Option Available is `Ubuntu 18.04`
+- [calico requirements](https://docs.projectcalico.org/archive/v3.20/getting-started/kubernetes/requirements)
 
 ## Configuring a cgroup driver
 
@@ -44,7 +46,10 @@ here the info to setup a cgroup driver for [docker](https://kubernetes.io/docs/s
 - [Running Ansible Manually](https://docs.ansible.com/ansible/2.4/guide_vagrant.html#running-ansible-manually)
 
   ```bash
+  # run master-playbook.yml
   ansible-playbook --private-key=~/.vagrant.d/insecure_private_key --extra-vars "node_ip=192.168.50.10" -u vagrant -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory kubernetes-setup/master-playbook.yml
+  # run unly join-command
+  ansible-playbook --private-key=~/.vagrant.d/insecure_private_key --extra-vars "node_ip=192.168.50.10" -u vagrant -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory kubernetes-setup/master-playbook.yml --tags "join-command"
   ```
 
 - troubleshoot kubelet
