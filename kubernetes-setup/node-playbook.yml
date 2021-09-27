@@ -97,9 +97,9 @@
         update_cache: yes
       vars:
         packages:
-          - kubelet
-          - kubeadm
-          - kubectl
+          - kubelet={{ k8s_version }}
+          - kubeadm={{ k8s_version }}
+          - kubectl={{ k8s_version }}
 
     - name: Configure node ip
       lineinfile:
@@ -112,11 +112,6 @@
         name: kubelet
         daemon_reload: yes
         state: restarted
-
-    # Step 2.3: Initialize the Kubernetes cluster with kubeadm using the below code (applicable only on master node).
-
-    - name: Initialize the Kubernetes cluster using kubeadm
-      command: kubeadm init --apiserver-advertise-address="192.168.50.10" --apiserver-cert-extra-sans="192.168.50.10"  --node-name k8s-master --pod-network-cidr=192.168.0.0/16
 
     # Step 3.2: Join the nodes to the Kubernetes cluster using below code.
 

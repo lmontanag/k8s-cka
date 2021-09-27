@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
             ansible.playbook = "kubernetes-setup/master-playbook.yml"
             ansible.extra_vars = {
                 node_ip: "192.168.50.10",
+                k8s_version: "1.21.5-00"
             }
         end
     end
@@ -30,6 +31,7 @@ Vagrant.configure("2") do |config|
                 ansible.playbook = "kubernetes-setup/node-playbook.yml"
                 ansible.extra_vars = {
                     node_ip: "192.168.50.#{i + 10}",
+                    k8s_version: "1.21.5-00"
                 }
             end
         end

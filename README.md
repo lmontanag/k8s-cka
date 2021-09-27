@@ -21,6 +21,39 @@ pip install ansible
 deactivate
 ```
 
+Starts and provisions the vagrant environment
+
+```bash
+# activate environment
+source ~/.venv-ansible/bin/activate
+vagrant up
+```
+
+Access to the servers
+
+```bash
+## Accessing master
+vagrant ssh k8s-master
+vagrant@k8s-master:~$ kubectl get nodes
+NAME         STATUS   ROLES                  AGE   VERSION
+k8s-master   Ready    control-plane,master   20h   v1.21.5
+node-1       Ready    <none>                 19h   v1.21.5
+node-2       Ready    <none>                 19h   v1.21.5
+
+
+## Accessing nodes
+vagrant ssh node-1
+vagrant ssh node-2
+```
+
+additional vagrant commands
+
+```bash
+resume          resume a suspended vagrant machine
+suspend         suspends the machine
+status          outputs status of the vagrant machine
+```
+
 ## useful links
 
 - [Training and Certification](https://docs.linuxfoundation.org/tc-docs/)
