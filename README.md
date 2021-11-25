@@ -61,8 +61,10 @@ status          outputs status of the vagrant machine
 - [JSON PATH Quiz- FREE COURSE](https://kodekloud.com/courses/json-path-quiz/)
 - [Certified Kubernetes Administrator (CKA) with Practice Tests](https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/)
 - [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
-
 - [Training and Certification](https://docs.linuxfoundation.org/tc-docs/)
+- !!! Linux Foundation Kubernetes Certifications Now Include Exam Simulator
+  - [Announcement](https://www.cncf.io/announcements/2021/06/02/linux-foundation-kubernetes-certifications-now-include-exam-simulator/)
+  - [CKA Simulator](https://killer.sh/)
 - [Important Instructions: CKA and CKAD](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad)
   - The CKA & CKAD environments are currently running Kubernetes v1.21.
 - [Platform Selection](https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook/exam-preparation-checklist#platform-selection-1)
